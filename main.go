@@ -70,7 +70,7 @@ func partition(array []int, low, high int, prefix string) int {
 		array[i], array[j] = array[j], array[i]
 		i, j = i+1, j-1
 	}
-	fmt.Printf(prefix+"Swap pivot with %d\n", array[j])
+	fmt.Printf(prefix+"Swap pivot with array[%d] i.e. %d\n", j, array[j])
 	array[low], array[j] = array[j], array[low]
 	return j
 }
@@ -128,6 +128,7 @@ func main() {
 		fmt.Println("Tree of calls:")
 		mergeSort(array, size, "|--")
 	case quickSortOP:
+		fmt.Println("Tree of calls:")
 		quickSort(array, 0, size-1, "|--")
 	case selectionSortOP:
 		selectionSort(array, size)
